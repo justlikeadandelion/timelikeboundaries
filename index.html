@@ -1,0 +1,213 @@
+<!DOCTYPE html> 
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>timelike boundaries</title>
+
+    <style>
+
+.left_div {
+    height: 100%;
+    width: 30%;
+    left: 10px;
+    top: -45px;
+    text-align: center;
+    padding: -30px;
+    position: absolute;
+    z-index: -1;
+    /* overflow: hidden; */
+}
+
+.middle_div {
+    height: 100%;
+    width: 20%;
+    left: 30%;
+    top: 0px;
+    text-align: center;
+    position: fixed;
+    padding: -30px;
+    overflow: hidden;
+    align-items: center;
+}
+#links {
+    cursor: grab;
+    z-index: 2;
+    text-align: center;
+}
+.circles {
+    width: 70%; /* Adjust the width and height as needed */
+    height: 80px;
+    border-radius: 50%;
+    border-width: 1px;
+    border-color: rgb(116, 100, 172);
+    border-style: solid;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    /* display: none; */
+}
+.circles:hover {
+    border: 0;
+}
+#circle01 {
+    top: 30%;
+}
+#circle02 {
+    top: 28%;
+}
+#circle03 {
+    top: 26%;
+}
+#circle04 {
+    top: 24%;
+}
+
+.right_div {
+    height: 100%;
+    width: 50%;
+    left: 50%;
+    top: 0px;
+    text-align: left;
+    padding: -30px;
+    position: fixed;
+    z-index: 1; 
+}
+#r02 {
+    display: none;
+}
+#r03 {
+    display: none;
+}
+#r04 {
+    display: none;
+}
+
+.sono{
+    font-size: 16px;
+    font-family: "Sono";
+    letter-spacing: 0px;
+    line-height: 20px;
+    /* color: black; */
+    color: rgb(116, 100, 172);
+    font-variation-settings: 'wght' 250;
+}
+.fraunces{
+    font-family: "Fraunces";
+    font-size: 50pt;
+    color: rgb(116, 100, 172);
+    line-height: 56px;
+    font-variation-settings: 'wght' 100, 'opsz' 144, 'SOFT' 100, 'WONK' 1;
+    /* text-align: center; */
+}
+@font-face {
+    font-family: "Sono";
+    src: url(Sono[MONO,wght].ttf);
+}
+@font-face {
+    font-family: "Fraunces";
+    src: url(Fraunces[SOFT,WONK,opsz,wght].woff2);
+}
+    </style>
+</head>
+<body>
+
+<div class="left_div">
+    <p class="fraunces">TIMELIKE BOUNDARIES</p>
+    <div class="sono">
+        <p>5–9 August 2024<br>Morelia, Mexico</p>
+        <br><br>
+        <p>_Organisers_<br><br>Dionysios Anninos<br>(King’s College London),<br><br>Damián Galante<br>(King’s College London)<br><br>and Olivier Sarbach<br>(Universidad Michoacana de<br>San Nicol ́as de Hidalgo)</p>
+        <br><br>
+        <p>_Sponsors_<br><br>Gravity Theory Trust,<br>King’s College London and<br>Universidad Michoacana <br>de San Nicol ́as de Hidalgo<br><br><br></p>
+    <img src="logos.png" width="55%">
+    </div>
+</div>
+
+<div class="middle_div">
+    <div id="circle01" class="circles">
+        <p onclick="click01()" id="links" class="sono">About the Workshop</p>
+    </div>
+    <div id="circle02" class="circles">
+        <p onclick="click02()" id="links" class="sono">Practical Information</p>
+    </div>
+    <div id="circle03" class="circles">
+        <p onclick="click03()" id="links" class="sono">Schedule</p>
+    </div>
+    <div id="circle04" class="circles">
+        <p onclick="click04()" id="links" class="sono">Contact</p>
+    </div>
+</div>
+
+<div class="right_div">
+    <div id="r01" class="sono">
+        <p>The workshop aims to bring together a select group of experts in the topic of timelike boundaries in gravity, spanning various fields from mathematical relativity to quantum gravity and holography. The one-week event will provide a platform for in-depth discussions and collaboration among participants.</p>
+        <p>_Participants_ <br> Michael    Anderson<br>
+            Eva    Silverstein<br>
+            Andrew    Svesko<br>
+            Eleanor    Harris<br>
+            Stephen    Lau<br>
+            Alejandro    Corichi<br>
+            Tatjana    Vukasinac<br>
+            Frederik    Denef<br>
+            Chawakorn Maneerat<br>
+            and more </p>
+    </div>
+
+    <div id="r02" class="sono">
+        <p>_Location_
+            <br> The meeting will take place in the beautiful UNESCO’s world heritage city of Morelia, Mexico, hosted by the Universidad Michoacana de San Nicol ́as de Hidalgo, the place where one of the first review articles on the subject was written.
+        </p>
+        <p>_Direction_</p>
+        <p>_Where to Stay_</p>
+    </div>
+
+    <div id="r03" class="sono">
+        <p>_Schedule_</p>
+        <p>Monday the 5th</p>
+        <p>Tuesday the 6th</p>
+        <p>Wednesday the 7th</p>
+        <p>Thurday the 8th</p>
+        <p>Friday the 9th</p>
+    </div>
+
+    <div id="r04" class="sono">
+        <p>email:</p>
+    </div>
+</div>
+
+<script>
+    var r01 = document.getElementById("r01");
+  var r02 = document.getElementById("r02");
+  var r03 = document.getElementById("r03");
+  var r04 = document.getElementById("r04");
+
+    function click01() {
+    r01.style.display = "block";
+    r02.style.display = "none";
+    r03.style.display = "none";
+    r04.style.display = "none";
+}
+function click02() {
+    r02.style.display = "block";
+    r01.style.display = "none";
+    r03.style.display = "none";
+    r04.style.display = "none";
+}
+function click03() {
+    r03.style.display = "block";
+    r01.style.display = "none";
+    r02.style.display = "none";
+    r04.style.display = "none";
+}
+function click04() {
+    r04.style.display = "block";
+    r01.style.display = "none";
+    r03.style.display = "none";
+    r02.style.display = "none";
+}
+</script>
+
+</body>
+</html>
